@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html>
 	<head>
@@ -23,6 +24,9 @@
 			#table{
 				font-size:70%;
 			}
+			.A{float:left}
+			.B{float:right}
+			.clear{clear:both}
 		</style>
 
 
@@ -232,9 +236,9 @@
 						 Для записи матрицы используется следующее обозначение:\
                         $$
 						\begin{pmatrix}
-						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\
-						 a_{21}& a_{22} & a_{23} & ... & a_{2n}\\
-						\ldots & \ldots & \ldots & ... & \ldots\\
+						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\\
+						 a_{21}& a_{22} & a_{23} & ... & a_{2n}\\\
+						\ldots & \ldots & \ldots & ... & \ldots\\\
 						a_{m1}& a_{m2} & a_{m3} & ... & a_{mn} 
 						\end{pmatrix}
 						$$
@@ -269,7 +273,7 @@
 						 то матрица называется прямоугольной. Примеры прямоугольной матрицы
 						 $
                         A=\begin{pmatrix}
-						 a_{11}& a_{12} & a_{13} \\ 
+						 a_{11}& a_{12} & a_{13}\\ 
 						 a_{21}& a_{22} & a_{23}\\
 						  a_{31}& a_{32} & a_{33}\\
 						   a_{41}& a_{42} & a_{43} 
@@ -277,7 +281,7 @@
 						   $ и
 						   $
                           B=\begin{pmatrix}
-						   a_{11}& a_{12} & a_{13} & a_{14} & a_{15} \\
+						   a_{11}& a_{12} & a_{13} & a_{14} & a_{15}\\
 						    a_{21}& a_{22} & a_{23} & a_{24} & a_{25}\\
 							 a_{31}& a_{32} & a_{33} & a_{34} & a_{35} 
 							 \end{pmatrix}
@@ -484,21 +488,11 @@
 
 				<section>
 					<h3>Сумма матриц</h3>
-					<div class=calc id=frtabl>
-						Выберите размер матриц: <select onchange=oms_mhigthAB(this.value)><option value="2">2</option>
-							<option value="3" selected="selected">3</option></select>
-							<div id=matr_block style="display:table;width:100%;" onresize="alert(1);"> 
-								<div id=ma style="display:table-cell;width:45%;"></div><div id=matr_r style="display:table-cell;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
-								<div id=mb style="display:table-cell;width:45%;"></div>
-								</div>
-
-
-
-
-					
-						<p style="text-align:center;"><b>Введите значения матриц:</b></p>
-						
-					</div>
+					<table class="A"></table>
+					<table class="B"></table>
+					<div class ='clear'>
+					<table class="C"></table>
+					<div class ='clear'>
 				</section>
 
 
@@ -642,11 +636,12 @@
 
 				<section>
 					<h3>Произведение матриц</h3>
-					<input type="button" value="Начать игру" id="game1_start">
-					<label for="game1_town">Ваш город:</label>
-					<input type="text" id="game1_town" >
-					<input type="button" id="game1_set_result" value="Отправить город">
-					<output id="game1_town2"></output>
+					<table class="A"></table>
+					<table class="B"></table>
+					<div class ='clear'>
+					<table class="C"></table>
+					<div class ='clear'>
+					
 				</section>
 
 
@@ -753,74 +748,47 @@
 
 				<section>
 					<h3>Определитель матрицы</h3>
-					<input type="button" value="Начать игру" id="game1_start">
-					<label for="game1_town">Ваш город:</label>
-					<input type="text" id="game1_town" >
-					<input type="button" id="game1_set_result" value="Отправить город">
-					<output id="game1_town2"></output>
-				</section>
+					<div class=calc id=frtabl>
+						<table class="matrix-inputs"></table>
+                        <button>Сгенерировать матрицу!</button>
+						<table border="1">
+							<tr>
+							<td>Задайте размеры матрицы</td>
+							<td><select id="size">
+							<option value="2">2</option>
+							<option selected="selected" value="3">3</option>
+							<option value="4">4</option>
+
+							</select></td>
+							<td><button onclick="createMatrix('matrix1')">Создать матрицу</button></td>
+							<td><button onclick="PrintMatrix()"> Вычислить</button></td>
+							<tr>
+							<tr style="height: 100px;">
+							<td id="matrix1" colspan="2"></td>
+							<td id="matrix2" colspan="2"></td>
+							</tr>
+							</table>
 
 
 
 
-
-
-				<section>
-					<h3>Тригонометрический круг</h3>
-					<div id="plot" style="height:400px; margin-left: 25%;"></div>
-				</section>
-
-			
-
-
-
-				<section data-markdown  data-separator-notes="^Note:">
-					<script type="text/template">
-						Игры
-						----
-
+					
+						<p style="text-align:center;"><b>Введите значения матриц:</b></p>
 						
-						Note:
-
-					</script>
-				</section>
-
-				<section>
-					<h3>Игра 1. Города классические</h3>
-					<input type="button" value="Начать игру" id="game1_start">
-					<label for="game1_town">Ваш город:</label>
-					<input type="text" id="game1_town" >
-					<input type="button" id="game1_set_result" value="Отправить город">
-					<output id="game1_town2"></output>
-				</section>
-
-				<section>
-					<h3>Игра 2. Города на расстояние</h3>
-					<input type="button" value="Начать игру" id="game2_start">
-					<label for="game2_town">Ваш город:</label>
-					<input type="text" id="game2_town" >
-					<input type="button" id="game2_set_result" value="Отправить город">
-					<output id="game2_town2"></output>
-					<div>
-						<span>Счет: </span>
-						<span id="game2_score"></span>
 					</div>
 				</section>
 
-				<section>
-					<h3>Игра 3. Города на расстояние. Многопользовательская</h3>
-					<label for="game3_name"></label>
-					<input type="text" id="game3_name">
-					<input type="button" value="Начать игру" id="game3_start">
-					<label for="game3_town">Ваш город:</label>
-					<input type="text" id="game3_town" >
-					<input type="button" id="game3_set_result" value="Отправить город">
-					<output id="game3_town2"></output>
-					<div>
-						<span>Счет: </span>
-						<span id="game3_score"></span>
-					</div>
-				</section>
+
+				
+
+				
+
+
+
+
+
+
+				
 
 				<section class="center" data-markdown  data-separator-notes="^Note:">
 					<script type="text/template">
@@ -834,18 +802,21 @@
 
 				<section
 					data-background-image="image/1.jpg"
-					data-menu-title="Абстрактная живопись"
+					data-background-size="contain"
+					data-menu-title="Не отворачивайся"
 				></section>
 
 				<section
-					data-background-image="image/yoda.jpg"
+					data-background-image="image/2.jpg"
 					data-background-size="contain"
-					data-menu-title="Мастер Йода"
+					data-menu-title="Любимые синусы"
 				></section>
 
-				<section data-menu-title="Конь Юлий">
-					<img src="image/juliy.jpg" alt="Конь Юлий">
-				</section>		
+				<section
+					data-background-image="image/3.jpg"
+					data-background-size="contain"
+					data-menu-title="дружок Х"
+				></section>		
 				
 				
 
@@ -904,196 +875,122 @@
 			});
 		</script>
 		<script>
-			window.onload = () => {
-
-				//рисуем круг
-				let layout ={
-					title: 'Тригонометрический круг',
-					xaxis: {
-						range: [-1.5,1.5],
-					},
-					yaxis: {
-						range: [-1.5,1.5],	
-					},
-					width:500,
-					height:500,
-					shapes: [
-						{
-						type:'circle',
-						xref:'x',
-						yref:'y',
-						x0:-1,
-						y0:-1,
-						x1:1,
-						y1:1,
-						line: {
-							color:'rgba(50,171,96,1)',
-						}	
-					},			
-					   {
-						type: 'line',
-						x0:0,
-						y0:0,
-						x1:Math.sqrt(.51),
-						y1:.7 ,
-						line: {
-							color: 'blue',
-							width:2.5,
-						}
-					  },
-					{
-						type: 'line',
-						x0:0,
-						y0:0.7,
-						x1:Math.sqrt(.51),
-						y1:.7 ,
-						line: {
-							color: 'blue',
-							width:2.5,
-						}
-
-					},
-					{
-						type: 'line',
-						x0:Math.sqrt(0.51),
-						y0:0,
-						x1:Math.sqrt(.51),
-						y1:.7 ,
-						line: {
-							color: 'blue',
-							width:2.5,
-						}
-					},
-
-				],
-					annotations: [
-						{
-						x:0,
-						y: 0.7,
-						xref:'x', 
-						yref:'y',
-						text:'Yb',
-						arrowhead:7,
-						showarrow:true,
-						ay:0,
-						ax:-20,
-						},
-						{
-						x:0,
-						y: 0.7,
-						xref:'x', 
-						yref:'y',
-						text:'Xb',
-						arrowhead:7,
-						showarrow:true,
-						ay:20,
-						ax:0,
-						},
-						{
-							x:Math.sqrt(.51),
-							y:.7,
-							text:'B',
-						},
-						{
-							x:-0.1,
-							y:-0.1,
-							text:'0',
-							ax:0,
-							ay:0,
-						}
-
-					]
-				};
-
-				Plotly.newPlot('plot',[],layout);
-
-				//Рассчет ортод
-				document.querySelector("#ortodroma").onclick = (e) =>{
-					let latA= document.querySelector('#latA').value;
-					let latB= document.querySelector('#latB').value;
-					let lonA= document.querySelector('#lonA').value;
-					let lonB= document.querySelector('#lonA').value;
-					if (latA === '' || latB=== '' || lonA === '' || lonB=== ''  ) {
-						alert('Не все подя заполнены');
-					}
-					if (
-						+latA < -90 || +latA >90 ||
-						+latB < -90 || +latB >90 ||
-						+lonA < -180 || +lonA >180 ||
-						+lonB < -180 || +lonB >180 
-					)
-					{
-						alert("Неверное значение одного из полей");
-					}
-					let result = ortodroma(+latA, +lonA, +latB, +lonB);
-					document.querySelector("#ortodroma_out").innerHTML =result;
-					console.log(latA);
+			
+			function createMatrixInputs(node, width, height) {
+			var  matrixInputs= []
+			for (var i = 0; i < 3; i += 1) {
+				var row = node.insertRow()
+				var inputsRow = []
+				matrixInputs.push(inputsRow)
+				for (var j = 0; j < 3; j += 1) {
+				var cell = row.insertCell()
+				var input = document.createElement('input')
+				inputsRow.push(input)
+				input.type = 'text'
+				input.style.width = '2em'
+				cell.appendChild(input)
 				}
+			}
+			return matrixInputs
+			}
 
 
-
-				//канвертер величин 
-				document.querySelector('#converter_button').onclick = () => {
-					let converterValue = document.querySelector('#converter_value');
-					let converterType = document.querySelector('#converter_type');
-					let converterOut = document.querySelector('#converter_out');
-					if (converterValue.value === '') {
-						alert ('Поле не заполнено');
-					}
-					console.log(converterType)
-					let currentType =+converterType.options.selectedIndex;
-					if (currentType ===0) {
-						result = katex.renderToString(math.evaluate('180 *' +converterValue.value + '/pi') +'^{\\circ}');
-					}
-					else if (currentType === 1){
-						result = katex.renderToString(math.simplify(converterValue.value+ ' * pi / 180').toTex());
-					}
-					converterOut.innerHTML=result;
+			function getMatrixValues(matrixInputs) {
+			var res = []
+			for (var i = 0; i < matrixInputs.length; i += 1) {
+				var inputsRow = matrixInputs[i]
+				var valuesRow = []
+				for (var j = 0; j < inputsRow.length; j += 1) {
+				var input = inputsRow[j]
+				var valueNum = parseFloat(input.value)
+				if (isNaN(valueNum)) { // те строковые значения, которые не смог распарсить в число заменяю на 0
+					valueNum = 0
 				}
-				//таблица тригонометрических функций
-				let values = ['0','pi/6','pi/4','pi/3','pi/2','pi','3pi/2','2pi'];
-				let functions = ['sin','cos','tan'];
-				trigonometry(values,functions);
-
-
-
-			}
-			function ortodroma (latA, lonA, latB, lonB){
-				return 6372795 * Math.acos(
-					Math.cos(deg2rad(latB)) * Math.cos(deg2rad(latA))*
-					Math.cos(deg2rad(lonA) - deg2rad(lonB) )+
-					Math.sin(deg2rad(latB)) * Math.sin(deg2rad(latA))
-				);
-			}
-			function deg2rad (degree) {
-				return Math.PI * degree / 180;
-			}
-			function trigonometry (values,functions) {
-				let table = '<table><thead>';
-					table +='<tr><td>Радианы</td>';
-					for (let value of values) {
-						table +=`<td>${katex.renderToString(Algebrite.simplify(value).toLatexString())}</td>`
-						;
-					}
-					table +='</tr><thead><tbody>';
-					for (let func of functions){
-						table +=`<tr><td>${func}${katex.renderToString('\\alpha')}</td>`;
-							for (value of values) {
-								table +=`<td>${katex.renderToString(Algebrite.simplify(func+
-									'('+value+')').toLatexString())}</td>`;
-							}
-
-					}
-
-				table +='<table>';
-				document.querySelector('#table').innerHTML = table;
-				
+				valuesRow.push(valueNum)
 				}
-				$("#matr_block").resize(function(){
-  alert($("#frtabl").css("width"));
-});
+				res.push(valuesRow)
+			}
+			return res
+			}
+
+			var submitButton = document.querySelector('button')
+			var A = createMatrixInputs(document.querySelector('.A'), 10, 6)
+			var B = createMatrixInputs(document.querySelector('.B'), 10, 6)
+			var C = createMatrixInputs(document.querySelector('.C'), 10, 6)
+			submitButton.addEventListener('click', function() {
+			var matrix1 = getMatrixValues(A)
+			var matrix2 = getMatrixValues(B)
+			var matrix3 = getMatrixValues(C)
+			console.log('matrix', matrix1,matrix2,SumMatrix(A,B))
+			}, false)
+		
+
+			//определитель
+			function Determinant(A)   // Используется алгоритм Барейса, сложность O(n^3)
+			{
+				var N = A.length, B = [], denom = 1, exchanges = 0;
+				for (var i = 0; i < N; ++i)
+				{ B[ i ] = [];
+				for (var j = 0; j < N; ++j) B[ i ][j] = A[ i ][j];
+				}
+				for (var i = 0; i < N-1; ++i)
+				{ var maxN = i, maxValue = Math.abs(B[ i ][ i ]);
+				for (var j = i+1; j < N; ++j)
+					{ var value = Math.abs(B[j][ i ]);
+					if (value > maxValue){ maxN = j; maxValue = value; }
+					}
+				if (maxN > i)
+					{ var temp = B[ i ]; B[ i ] = B[maxN]; B[maxN] = temp;
+					++exchanges;
+					}
+				else { if (maxValue == 0) return maxValue; }
+				var value1 = B[ i ][ i ];
+				for (var j = i+1; j < N; ++j)
+					{ var value2 = B[j][ i ];
+					B[j][ i ] = 0;
+					for (var k = i+1; k < N; ++k) B[j][k] = (B[j][k]*value1-B[ i ][k]*value2)/denom;
+					}
+				denom = value1;
+				}
+				if (exchanges%2) return -B[N-1][N-1];
+				else return B[N-1][N-1];
+			}
+
+
+			//сложение матриц
+			function SumMatrix(A,B)       //На входе двумерные массивы одинаковой размерности
+			{   
+				var m = A.length, n = A[0].length, C = [];
+				for (var i = 0; i < m; i++)
+				{ C[ i ] = [];
+				for (var j = 0; j < n; j++) C[ i ][j] = A[ i ][j]+B[ i ][j];
+				}
+				return C;
+			}
+
+			//произведение матриц			
+			function MultiplyMatrix(A,B)
+			{
+				var rowsA = A.length, colsA = A[0].length,
+					rowsB = B.length, colsB = B[0].length,
+					C = [];
+				if (colsA != rowsB) return false;
+				for (var i = 0; i < rowsA; i++) C[ i ] = [];
+				for (var k = 0; k < colsB; k++)
+				{ for (var i = 0; i < rowsA; i++)
+					{ var t = 0;
+					for (var j = 0; j < rowsB; j++) t += A[ i ][j]*B[j][k];
+					C[ i ][k] = t;
+					}
+				}
+				return C;
+			}
+
+
+
+			
+
 
 		</script>
 	</body>
-</html>
-
+</html
