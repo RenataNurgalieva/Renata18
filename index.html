@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html>
 	<head>
@@ -24,9 +23,28 @@
 			#table{
 				font-size:70%;
 			}
+			.reveal{
+				font-size: 28px;
+			}
+			#Matr{
+				font-size: 20px;
+			}
+			#Matri{
+				font-size: 20px;
+			}
+		
+			
 			.A{float:left}
 			.B{float:right}
 			.clear{clear:both}
+			.sum{
+			display:inline-block;
+			vertical-align: middle;
+			}
+			.mult{
+			display:inline-block;
+			vertical-align: middle;
+			}
 		</style>
 
 
@@ -236,9 +254,9 @@
 						 Для записи матрицы используется следующее обозначение:\
                         $$
 						\begin{pmatrix}
-						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\\
-						 a_{21}& a_{22} & a_{23} & ... & a_{2n}\\\
-						\ldots & \ldots & \ldots & ... & \ldots\\\
+						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\\\
+						 a_{21}& a_{22} & a_{23} & ... & a_{2n}\\\\
+						\ldots & \ldots & \ldots & ... & \ldots\\\\
 						a_{m1}& a_{m2} & a_{m3} & ... & a_{mn} 
 						\end{pmatrix}
 						$$
@@ -271,21 +289,20 @@
 						<br />
                         Если число строк матрицы не равно числу столбцов $m \neq n$,
 						 то матрица называется прямоугольной. Примеры прямоугольной матрицы
-						 $
+						 $$
                         A=\begin{pmatrix}
-						 a_{11}& a_{12} & a_{13}\\ 
-						 a_{21}& a_{22} & a_{23}\\
-						  a_{31}& a_{32} & a_{33}\\
+						 a_{11}& a_{12} & a_{13}\\\\
+						 a_{21}& a_{22} & a_{23}\\\\
+						  a_{31}& a_{32} & a_{33}\\\\
 						   a_{41}& a_{42} & a_{43} 
 						   \end{pmatrix}
-						   $ и
-						   $
-                          B=\begin{pmatrix}
-						   a_{11}& a_{12} & a_{13} & a_{14} & a_{15}\\
-						    a_{21}& a_{22} & a_{23} & a_{24} & a_{25}\\
+                          , 
+						  B=\begin{pmatrix}
+						   a_{11}& a_{12} & a_{13} & a_{14} & a_{15}\\\\
+						    a_{21}& a_{22} & a_{23} & a_{24} & a_{25}\\\\
 							 a_{31}& a_{32} & a_{33} & a_{34} & a_{35} 
 							 \end{pmatrix}
-							 $
+							 $$
 
 
 					
@@ -301,22 +318,20 @@
                         Если число строк равно числу столбцов $(m=n)$,
 						 тогда мы получаем квадратную матрицу. 
 						 Примеры квадратных матриц:
-                        $
+                        $$
                         A=\begin{pmatrix}
-					    a_{11}& a_{12} & a_{13} \\
-						a_{21}& a_{22} & a_{23}\\
+					    a_{11}& a_{12} & a_{13}\\\\
+						a_{21}& a_{22} & a_{23}\\\\
 					    a_{31}& a_{32} & a_{33} 
 					   \end{pmatrix}
-					   $
-                        и
-						$
+					   ,
                        B=\begin{pmatrix}
-					    a_{11}& a_{12} & a_{13} & a_{14} \\ 
-						a_{21}& a_{22} & a_{23} & a_{24}\\
-						a_{31}& a_{32} & a_{33} & a_{34}\\
+					    a_{11}& a_{12} & a_{13} & a_{14}\\\\ 
+						a_{21}& a_{22} & a_{23} & a_{24}\\\\
+						a_{31}& a_{32} & a_{33} & a_{34}\\\\
 					    a_{41}& a_{42} & a_{43} & a_{44} 
 					    \end{pmatrix}
-						 $
+						 $$
                        Число столбцов или строк квадратной матрицы указывает на ее порядок. 
 					   Так, матрица А в нашем примере третьего порядка, а матрица B четвертого.
 						Note:
@@ -331,15 +346,15 @@
                         Если все элементы в матрице равны нулю, 
 						то такая матрица называется нулевой матрицей.
 						 Например,
-                        $
+                        $$
                         O=\begin{pmatrix}
-						 0& 0 & 0 &0 \\
-						 0& 0 & 0 &0\\
-						 0& 0 & 0 & 0\\
-						 \ldots & \ldots & \ldots\\
+						 0& 0 & 0 &0\\\\
+						 0& 0 & 0 &0\\\\
+						 0& 0 & 0 & 0\\\\
+						 \ldots & \ldots & \ldots\\\\
 						 0& 0 &0 & 0 
 						 \end{pmatrix}
-						 $
+						 $$
                       Нулевая матрица обозначается буквой O.
 						Note:
 
@@ -353,31 +368,29 @@
                       Квадратная матрица, у которой отличны от нуля только элементы главной диагонали,
 					   называется диагональной матрицей. 
 					   Пример диагональной матрицы:
-                    $
+                    $$
                        A=\begin{pmatrix} 
-					   a_{11}& 0 & 0 &0 \\
-					    0& a_{22} &0 &0\\
-					    0& 0& a_{33} & 0\\
+					   a_{11}& 0 & 0 &0\\\\
+					    0& a_{22} &0 &0\\\\
+					    0& 0& a_{33} & 0\\\\
 						0& 0 & 0& a_{44}
 						 \end{pmatrix}
-						 $
+						 $$
                        Диагональными матрицами являются, к примеру, такие:
-                        $
+                        $$
                        A=\begin{pmatrix} 
-					   2& 0 &0\\
-					    0& 1 & 0\\
+					   2& 0 &0\\\\
+					    0& 1 & 0\\\\
 						 0& 0& -4
 						  \end{pmatrix}
-						  $
-                         и
-                           $
+						 ,
                         B=\begin{pmatrix}
-						 7& 0 & 0 & 0 \\
-						  0& 4 & 0& 0\\
-						   0&0 & 11& 0\\
+						 7& 0 & 0 & 0\\\\
+						  0& 4 & 0& 0\\\\
+						   0&0 & 11& 0\\\\
 						    0& 0 & 0 & -5
 							 \end{pmatrix}
-							 $
+							 $$
 
 						Note:
 
@@ -411,37 +424,35 @@
 				</section>
 
 		
-				<section data-markdown  data-separator-notes="^Note:">
+				<section data-markdown  data-separator-notes="^Note:" id="Matr">
 					<script type="text/template">
 						### Сумма матриц
-						алгоритм
-                     $
+						Алгоритм
+                     $$
 						A = \begin{pmatrix} 
-						a_{11}& a_{12} & a_{13} & ... & a_{1n}\\
-						 a_{21}& a_{22} & a_{23} & ... & a_{2n} \\
-						  \ldots & \ldots & \ldots & ... & \ldots \\
+						a_{11}& a_{12} & a_{13} & ... & a_{1n}\\\\
+						 a_{21}& a_{22} & a_{23} & ... & a_{2n}\\\\
+						  \ldots & \ldots & \ldots & ... & \ldots\\\\
 						   a_{m1}& a_{m2} & a_{m3} & ... & a_{mn}
-						    \end{pmatrix}
-							$
-                    и $
+						    \end{pmatrix}, 
                          B= \begin{pmatrix}
-						  b_{11}& b_{12} & b_{13} & ... & b_{1n}\\
-						   b_{21}& b_{22} & b_{23} & ... & b_{2n} \\
-						    \ldots & \ldots & \ldots & ... & \ldots \\
+						  b_{11}& b_{12} & b_{13} & ... & b_{1n}\\\\
+						   b_{21}& b_{22} & b_{23} & ... & b_{2n}\\\\
+						    \ldots & \ldots & \ldots & ... & \ldots\\\\
 							 b_{m1}& b_{m2} & b_{m3} & ... & b_{mn}
 							  \end{pmatrix}
-							  $
+							  $$
                      Тогда сумма матриц C=A+B:
-					 $ 
+					 $$ 
                     C= \begin{pmatrix}
-					 c_{11}& c_{12} & c_{13} & ... & c_{1n}\\
-					  c_{21}& a_{22} & c_{23} & ... & c_{2n} \\
-					   \ldots & \ldots & \ldots & ... & \ldots \\
+					 c_{11}& c_{12} & c_{13} & ... & c_{1n}\\\\
+					  c_{21}& a_{22} & c_{23} & ... & c_{2n}\\\\
+					   \ldots & \ldots & \ldots & ... & \ldots\\\\
 					    c_{m1}& c_{m2} & c_{m3} & ... & c_{mn}
 						 \end{pmatrix}
-						 $
+						 $$
                     где $c_{11}=a_{11}+b_{11}, c_{12}=a_{12}+b_{12}, c_{12}=a_{12}+b_{12}, ... , c_{1j}=a_{1j}+b_{1j},
-					 c_{1n}=a_{1n}+b_{1n}, ..., c_{ij}=a_{ij}+b_{ij}, ..., c_{mn}=a_{mn}+b_{mn}.$
+					 c_{1n}=a_{1n}+b_{1n}, ..., c_{ij}=a_{ij}+b_{ij}, ..., c_{mn}=a_{mn}+b_{mn}$
 
 						Note:
 
@@ -452,32 +463,32 @@
 				<section data-markdown  data-separator-notes="^Note:">
 					<script type="text/template">
 						### Сумма матриц
-						примеры
+						Примеры.
                         Сложите матрицы A и B, если:
-                       $
+                       $$
                         A= \begin{pmatrix} 
-						2 & 5\\ 
+						2 & 5\\\\ 
 						7& -3
 					  \end{pmatrix}
-					  $
+					  $$
                     и
-                    $
+                    $$
                      B= \begin{pmatrix}
-					  -3 & 4\\
+					  -3 & 4\\\\
 					   8& 5
 					 \end{pmatrix}
-					 $
+					 $$
                     Решение:
                      Матрицы A и B имеют одинаковое строение, значит мы можем их сложить, получим матрицу С:
-                    $C= \begin{pmatrix}
-					 2+(-3) & 5+4\\
+                    $$C= \begin{pmatrix}
+					 2+(-3) & 5+4\\\\
 					  7+8& -3+5 
 					  \end{pmatrix}
 					   = 
 					   \begin{pmatrix}
-					    -1 & 9\\
+					    -1 & 9\\\\
 						 15& 2
-						  \end{pmatrix}$
+						  \end{pmatrix}$$
 
 		
 						
@@ -488,11 +499,12 @@
 
 				<section>
 					<h3>Сумма матриц</h3>
-					<table class="A"></table>
-					<table class="B"></table>
-					<div class ='clear'>
-					<table class="C"></table>
-					<div class ='clear'>
+					<table class="sum" id="A"></table>
+					<div class="sum" id="plus">$+$</div>
+					<table class="sum" id="B"></table>
+					<div class="sum" id="plus">$=$</div>
+					<button class="sum" id="to-sum">Сложить</button>
+					<table class="sum hide" id="C"></table>
 				</section>
 
 
@@ -509,19 +521,19 @@
 						### Произведение матриц
 						Умножение матрицы на число — есть умножение на это число всех элементов матрицы.
                         Произведением матрицы A на число k называется такая матрица kA, каждый элемент которой равен $ka_{ij}$, то есть, если
-                        $A = \begin{pmatrix}
-						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\
-						  a_{21}& a_{22} & a_{23} & ... & a_{2n} \\
-						   \ldots & \ldots & \ldots & ... & \ldots \\
+                        $$A = \begin{pmatrix}
+						 a_{11}& a_{12} & a_{13} & ... & a_{1n}\\\\
+						  a_{21}& a_{22} & a_{23} & ... & a_{2n}\\\\
+						   \ldots & \ldots & \ldots & ... & \ldots\\\\
 						    a_{m1}& a_{m2} & a_{m3} & ... & a_{mn}
-							 \end{pmatrix},$
+							 \end{pmatrix},$$
                          то
-                        $kA = \begin{pmatrix} 
-						ka_{11}& ka_{12} & ka_{13} & ... & ka_{1n}\\
-						 ka_{21}& ka_{22} & ka_{23} & ... & ka_{2n} \\
-						  \ldots & \ldots & \ldots & ... & \ldots \\
+                        $$kA = \begin{pmatrix} 
+						ka_{11}& ka_{12} & ka_{13} & ... & ka_{1n}\\\\
+						 ka_{21}& ka_{22} & ka_{23} & ... & ka_{2n}\\\\
+						  \ldots & \ldots & \ldots & ... & \ldots\\\\
 						   ka_{m1}& ka_{m2} & ka_{m3} & ... & ka_{mn}
-						    \end{pmatrix}.$ 
+						    \end{pmatrix}.$$
 						
 						Note:
 					</script>
@@ -529,23 +541,23 @@
 				<section data-markdown  data-separator-notes="^Note:">
 					<script type="text/template">
 						### Произведение матриц
-						Пример
+						Пример.
 						Умножьте матрицу 
-						$A= \begin{pmatrix}
-						 2 & 5\\
+						$$A= \begin{pmatrix}
+						 2 & 5\\\\
 						  7& -3 
-						  \end{pmatrix}$ на число k=2.
+						  \end{pmatrix}$$ на число k=2.
 						Решение: Чтобы умножить матрицу A на число 2, нужно умножить на это число каждый элемент матрицы.
 						 Итак, получим:
-						$2A= \begin{pmatrix}
-						 2\cdot 2 & 2 \cdot 5\\
+						$$2A= \begin{pmatrix}
+						 2\cdot 2 & 2 \cdot 5\\\\
 						  2 \cdot 7& 2 \cdot (-3)
 						   \end{pmatrix}
 						   =
 						    \begin{pmatrix} 
-						   4 & 10\\ 
+						   4 & 10\\\\
 						   14& -6
-						    \end{pmatrix}.$
+						    \end{pmatrix}.$$
 						
 						
 						Note:
@@ -563,41 +575,42 @@
 						Note:
 					</script>
 				</section>
-				<section data-markdown  data-separator-notes="^Note:">
+				<section data-markdown  data-separator-notes="^Note:" id="Matri">
 					<script type="text/template">
 						### Произведение матриц
 						Пусть нам нужно умножить две квадратные матрицы A и B.
-                        $A= \begin{pmatrix}
-						 a_{11} & a_{12} & a_{13} \\
-						  a_{21}& a_{22} & a_{23} \\
+                        $$A= \begin{pmatrix}
+						 a_{11} & a_{12} & a_{13}\\\\
+						  a_{21}& a_{22} & a_{23}\\\\
 						   a_{31} & a_{32} & a_{33} 
 						   \end{pmatrix},
 						    B= \begin{pmatrix}
-							 b_{11} & b_{12} & b_{13} \\
-							  b_{21}& b_{22} & b_{23} \\
+							 b_{11} & b_{12} & b_{13}\\\\
+							  b_{21}& b_{22} & b_{23}\\\\
 							   b_{31} & b_{32} & b_{33}
-							    \end{pmatrix}$
+							    \end{pmatrix}$$
                          Умножением матрицы на матрицу называется матрица:
-                         $C= \begin{pmatrix}
-						  a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31} & a_{11}b_{12}+a_{12}b_{22}+a_{13}b_{32} & a_{11}b_{13}+a_{12}b_{23}+a_{13}b_{33} \\
-						   a_{21}b_{11}+a_{22}b_{21}+a_{23}b_{31}& a_{21}b_{12}+a_{22}b_{22}+a_{23}b_{32} & a_{21}b_{13}+a_{22}b_{23}+a_{23}b_{33} \\ 
+                         $$C= \begin{pmatrix}
+						  a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31} & a_{11}b_{12}+a_{12}b_{22}+a_{13}b_{32} & a_{11}b_{13}+a_{12}b_{23}+a_{13}b_{33}\\\\
+						   a_{21}b_{11}+a_{22}b_{21}+a_{23}b_{31}& a_{21}b_{12}+a_{22}b_{22}+a_{23}b_{32} & a_{21}b_{13}+a_{22}b_{23}+a_{23}b_{33}\\\\ 
 						   a_{31}b_{11}+a_{32}b_{21}+a_{33}b_{31} & a_{31}b_{12}+a_{32}b_{22}+a_{33}b_{32} & a_{31}b_{13}+a_{32}b_{23}+a_{33}b_{33}
-						  \end{pmatrix}
+						  \end{pmatrix} $$
+						  $$
 						   =\begin{pmatrix}
-						    c_{11} & c_{12} & c_{13} \\
-							 c_{21}& c_{22} & c_{23} \\
+						    c_{11} & c_{12} & c_{13}\\\\
+							 c_{21}& c_{22} & c_{23}\\\\
 							  c_{31} & c_{32} & c_{33}
-							   \end{pmatrix}.$
+							   \end{pmatrix}.$$
                         Таким образом, получаем:
-                        $c_{11}=a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31},
+                        $$c_{11}=a_{11}b_{11}+a_{12}b_{21}+a_{13}b_{31},
                         c_{12}= a_{11}b_{12}+a_{12}b_{22}+a_{13}b_{32},
-                        c_{13}= a_{11}b_{13}+a_{12}b_{23}+a_{13}b_{33},
+                        c_{13}= a_{11}b_{13}+a_{12}b_{23}+a_{13}b_{33},\\\\
                         c_{21}=a_{21}b_{11}+a_{22}b_{21}+a_{23}b_{31},
                         c_{22}=a_{21}b_{12}+a_{22}b_{22}+a_{23}b_{32},
-                        c_{23}=a_{21}b_{13}+a_{22}b_{23}+a_{23}b_{33},
+                        c_{23}=a_{21}b_{13}+a_{22}b_{23}+a_{23}b_{33},\\\\
                         c_{31}=a_{31}b_{11}+a_{32}b_{21}+a_{33}b_{31},
                         c_{32}=a_{31}b_{12}+a_{32}b_{22}+a_{33}b_{32},
-                        c_{33}=a_{31}b_{13}+a_{32}b_{23}+a_{33}b_{33}.$
+                        c_{33}=a_{31}b_{13}+a_{32}b_{23}+a_{33}b_{33}.$$
 
 						Note:
 					</script>
@@ -605,27 +618,27 @@
 				<section data-markdown  data-separator-notes="^Note:">
 					<script type="text/template">
 						### Произведение матриц
-						Пример
+						Пример.
                         Найдите произведение матриц:
-                        $A= \begin{pmatrix}
-						 2 & 5\\
+                        $$A= \begin{pmatrix}
+						 2 & 5\\\\
 						  7& -3
 						   \end{pmatrix}
-						   $ и 
-						   $B= \begin{pmatrix} 
-						   -3 & 4\\
+						   $$ и 
+						   $$B= \begin{pmatrix} 
+						   -3 & 4\\\\
 						    8& 5
-							 \end{pmatrix}.$
+							 \end{pmatrix}.$$
                         Решение:
                         Находим произведение матриц 
-						$AB= \begin{pmatrix}
-						 2 \cdot (-3)+5 \cdot 8 & 2 \cdot 4+5 \cdot 5\\
+						$$AB= \begin{pmatrix}
+						 2 \cdot (-3)+5 \cdot 8 & 2 \cdot 4+5 \cdot 5\\\\
 						  7 \cdot (-3)+(-3) \cdot 8& (-3) \cdot 4+ (-3) \cdot 5 
 						  \end{pmatrix}
 						  = \begin{pmatrix}
-						   34 & 33\\
+						   34 & 33\\\\
 						    -45 & -27 
-							\end{pmatrix}.$
+							\end{pmatrix}.$$
                         Таким образом, для прямоугольных матриц правило
 						 умножения матрицы на матрицу такое же, как и для квадратных матриц.
 
@@ -636,11 +649,12 @@
 
 				<section>
 					<h3>Произведение матриц</h3>
-					<table class="A"></table>
-					<table class="B"></table>
-					<div class ='clear'>
-					<table class="C"></table>
-					<div class ='clear'>
+					<table class="mult" id="A1"></table>
+					<div class="mult" id="plus">$*$</div>
+					<table class="mult" id="B1"></table>
+					<div class="mult" id="plus">$=$</div>
+					<button class="mult" id="to-mult">Умножить</button>
+					<table class="mult hide" id="C1"></table>
 					
 				</section>
 
@@ -677,10 +691,10 @@
 						Чтобы вычислить определитель матрицы  второго порядка,
 						 надо от произведения элементов главной диагонали отнять
 						  произведение элементов побочной диагонали:
-						  <p>$\left| \begin{array}{ll}{a_{11}} &amp; {a_{12}} \\
+						  <p>$$\left| \begin{array}{ll}{a_{11}} &amp; {a_{12}}\\\\
 						 {a_{21}} &amp; {a_{22}}
 						 \end{array}\right|
-						 =a_{11} \cdot a_{22}-a_{12} \cdot a_{21}$</p>
+						 =a_{11} \cdot a_{22}-a_{12} \cdot a_{21}$$</p>
 						
 						
 
@@ -692,7 +706,7 @@
 
 				<section>
 					
-					<p class="title">Пример</p>
+					<p class="title">Пример.</p>
 	                <div class="text">
 		            <p><strong>Задание.</strong> Вычислить определитель второго порядка
 		          	$\left| \begin{array}{rr}{11} &amp; {-2} \\ {7} &amp; {5}\end{array}\right|$</p>
@@ -713,10 +727,10 @@
                          Произведение элементов в первом определителе, которые соединены прямыми,
                 	     берется со знаком "плюс"; аналогично, для второго определителя - 
 					      соответствующие произведения берутся со знаком "минус", т.е.
-						  <p>$\left| \begin{array}{ccc}{a_{11}} &amp; {a_{12}} &amp; {a_{13}} \\
-							{a_{21}} &amp; {a_{22}} &amp; {a_{23}} \\
+						  <p>$$\left| \begin{array}{ccc}{a_{11}} &amp; {a_{12}} &amp; {a_{13}}\\\\
+							{a_{21}} &amp; {a_{22}} &amp; {a_{23}}\\\\
 							{a_{31}} &amp; {a_{32}} &amp; {a_{33}}
-							\end{array}\right|=a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}-$
+							\end{array}\right|=a_{11} a_{22} a_{33}+a_{12} a_{23} a_{31}+a_{13} a_{21} a_{32}-$$
 					 </p>
 					  <p>$-a_{11} a_{23} a_{32}-a_{12} a_{21} a_{33}-a_{13} a_{22} a_{31}$</p>
 						
@@ -729,7 +743,7 @@
 				</section>
 				<section>
 					
-					<p class="title">Пример</p>
+					<p class="title">Пример.</p>
 	                <div class="text">
 	                 	<p><strong>Задание.</strong> Вычислить определитель $\left| \begin{array}{rrr}{3} &amp;
 							 {3} &amp; {-1} \\ {4} &amp; {1} &amp; {3} \\
@@ -746,49 +760,59 @@
 					
 				</section>
 
-				<section>
-					<h3>Определитель матрицы</h3>
-					<div class=calc id=frtabl>
-						<table class="matrix-inputs"></table>
-                        <button>Сгенерировать матрицу!</button>
-						<table border="1">
-							<tr>
-							<td>Задайте размеры матрицы</td>
-							<td><select id="size">
-							<option value="2">2</option>
-							<option selected="selected" value="3">3</option>
-							<option value="4">4</option>
 
-							</select></td>
-							<td><button onclick="createMatrix('matrix1')">Создать матрицу</button></td>
-							<td><button onclick="PrintMatrix()"> Вычислить</button></td>
-							<tr>
-							<tr style="height: 100px;">
-							<td id="matrix1" colspan="2"></td>
-							<td id="matrix2" colspan="2"></td>
-							</tr>
-							</table>
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Исходный код
+						------------
 
-
-
-
-					
-						<p style="text-align:center;"><b>Введите значения матриц:</b></p>
-						
-					</div>
+						Note:
+					</script>
 				</section>
 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Сумма матриц
+						
+						```
+						let submitButton = document.querySelector('#to-sum')
+						let A = createMatrixInputs(document.querySelector('#A'), 3, 10, 6)
+						let B = createMatrixInputs(document.querySelector('#B'), 3, 10, 6)
+						submitButton.addEventListener('click', function() {
+						let matrixA = getMatrixValues(A)
+						let matrixB = getMatrixValues(B)
+						createMatrixInputs(document.querySelector('#C'), 3, 10, 6, SumMatrix(matrixA, matrixB));
+						}, false)
+						```
+
+						Note:
+						Исходный код программы генерации таблицы
+						производных
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Произведение матриц
+						
+						```
+						let submitButton1 = document.querySelector('#to-mult')
+						let A1 = createMatrixInputs(document.querySelector('#A1'), 3, 10, 6)
+						let B1 = createMatrixInputs(document.querySelector('#B1'), 3, 10, 6)
+						submitButton1.addEventListener('click', function() {
+						let matrixA1 = getMatrixValues(A1)
+						let matrixB1 = getMatrixValues(B1)
+						createMatrixInputs(document.querySelector('#C1'), 3, 10, 6, MultiplyMatrix(matrixA1, matrixB1));
+						}, false)
+						```
+
+						Note:
+						
+					</script>
+				</section>
 
 				
 
-				
-
-
-
-
-
-
-				
 
 				<section class="center" data-markdown  data-separator-notes="^Note:">
 					<script type="text/template">
@@ -876,20 +900,25 @@
 		</script>
 		<script>
 			
-			function createMatrixInputs(node, width, height) {
-			var  matrixInputs= []
-			for (var i = 0; i < 3; i += 1) {
-				var row = node.insertRow()
-				var inputsRow = []
-				matrixInputs.push(inputsRow)
-				for (var j = 0; j < 3; j += 1) {
-				var cell = row.insertCell()
-				var input = document.createElement('input')
-				inputsRow.push(input)
-				input.type = 'text'
-				input.style.width = '2em'
-				cell.appendChild(input)
-				}
+			function createMatrixInputs(node, n, width, height, values = undefined) {
+			let matrixInputs= []
+			for (let i = 0; i < n; i += 1) {
+			let row = node.insertRow()
+			let inputsRow = []
+			matrixInputs.push(inputsRow)
+			for (let j = 0; j < n; j += 1) {
+			let cell = row.insertCell()
+			let input = document.createElement('input')
+			inputsRow.push(input)
+			input.type = 'text'
+			if (values !== undefined && (values[i][j] !== undefined || values[i][j] !== '')) {
+			input.value = values[i][j]
+			input.disabled = true
+			input.style.color = 'white'
+			}
+			input.style.width = '2em'
+			cell.appendChild(input)
+			}
 			}
 			return matrixInputs
 			}
@@ -913,16 +942,25 @@
 			return res
 			}
 
-			var submitButton = document.querySelector('button')
-			var A = createMatrixInputs(document.querySelector('.A'), 10, 6)
-			var B = createMatrixInputs(document.querySelector('.B'), 10, 6)
-			var C = createMatrixInputs(document.querySelector('.C'), 10, 6)
+			let submitButton = document.querySelector('#to-sum')
+			let A = createMatrixInputs(document.querySelector('#A'), 3, 10, 6)
+			let B = createMatrixInputs(document.querySelector('#B'), 3, 10, 6)
 			submitButton.addEventListener('click', function() {
-			var matrix1 = getMatrixValues(A)
-			var matrix2 = getMatrixValues(B)
-			var matrix3 = getMatrixValues(C)
-			console.log('matrix', matrix1,matrix2,SumMatrix(A,B))
+			let matrixA = getMatrixValues(A)
+			let matrixB = getMatrixValues(B)
+			createMatrixInputs(document.querySelector('#C'), 3, 10, 6, SumMatrix(matrixA, matrixB));
 			}, false)
+
+			let submitButton1 = document.querySelector('#to-mult')
+			let A1 = createMatrixInputs(document.querySelector('#A1'), 3, 10, 6)
+			let B1 = createMatrixInputs(document.querySelector('#B1'), 3, 10, 6)
+			submitButton1.addEventListener('click', function() {
+			let matrixA1 = getMatrixValues(A1)
+			let matrixB1 = getMatrixValues(B1)
+			createMatrixInputs(document.querySelector('#C1'), 3, 10, 6, MultiplyMatrix(matrixA1, matrixB1));
+			}, false)
+
+			
 		
 
 			//определитель
@@ -993,4 +1031,4 @@
 
 		</script>
 	</body>
-</html
+</html>
